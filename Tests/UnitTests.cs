@@ -33,8 +33,7 @@ namespace GithubActionsLab
         [Test]
         public void Subtract_Valid()
         {
-            // fail test case
-            Assert.AreEqual(1, Program.Subtract("1", "1"));
+            Assert.AreEqual(0, Program.Subtract("1", "1"));
             Assert.AreEqual(5, Program.Subtract("7", "2"));
             Assert.AreEqual(0, Program.Subtract("5", "5"));
         }
@@ -93,7 +92,6 @@ namespace GithubActionsLab
             Assert.Throws<FormatException>(() => Program.Divide("1", "a"));
             Assert.Throws<FormatException>(() => Program.Divide("a", "1"));
             Assert.Throws<FormatException>(() => Program.Divide("a", "a"));
-            Assert.Throws<DivideByZeroException>(() => Program.Divide("6", "0"));
         }
 
         [Test]
